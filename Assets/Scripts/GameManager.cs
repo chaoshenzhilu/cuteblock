@@ -48,6 +48,7 @@ namespace DefaultNamespace
                 instance.transform.position=Vector3.one*200;
                 instance.transform.localRotation=Quaternion.identity;
                 instance.transform.localScale=Vector3.one*0.5f;
+                cuteBlock.cuteId = i;
                 initBlockList.Add(cuteBlock);
             }
         }
@@ -61,7 +62,6 @@ namespace DefaultNamespace
         }
 
         [SerializeField]
-        private List<int> indexList = new List<int>();
         private CuteBlock _cuteBlock;
         [SerializeField]
         private Transform rightBox;
@@ -70,6 +70,7 @@ namespace DefaultNamespace
 
         public void CreateThreeBlock()
         {
+            
             foreach (Transform pos in posList)
             {
                 if (pos.childCount > 0)
@@ -272,6 +273,8 @@ namespace DefaultNamespace
                 {
                     if (blockItem)
                     {
+                        bgGroup.BgGrid[blockItem.pos] = null;
+                        blockItem.transform.parent.DetachChildren();
                         Destroy(blockItem.gameObject);
                     }
                 }
@@ -284,6 +287,8 @@ namespace DefaultNamespace
                 {
                     if (blockItem)
                     {
+                        bgGroup.BgGrid[blockItem.pos] = null;
+                        blockItem.transform.parent.DetachChildren();
                         Destroy(blockItem.gameObject);
                     }
                 }
@@ -436,7 +441,10 @@ namespace DefaultNamespace
         {
             foreach (var keyValuePair in bgGroup.BgGrid)
             {
-                keyValuePair.Value.ResetColor();
+                if (keyValuePair.Value)
+                {
+                    keyValuePair.Value.ResetColor();
+                }
             }
         }
     }

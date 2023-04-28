@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class CuteBlock : MonoBehaviour
 {
-    public int index;
+    /// <summary>
+    /// 类型id  
+    /// </summary>
+    public int cuteId;
     [SerializeField]
     private Transform childContent;
     public List<BlockItem> childList=new List<BlockItem>();
