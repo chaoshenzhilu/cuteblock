@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: -4948053107845220353}
   - component: {fileID: 1772763815604677358}
   - component: {fileID: 7778252567459959563}
+  - component: {fileID: 6146260430674849442}
   m_Layer: 0
   m_Name: I Tetromino 1
   m_TagString: Untagged
@@ -185,6 +186,7 @@ MonoBehaviour:
   index: 0
   childContent: {fileID: 8023518360433179684}
   childList: []
+  color: {r: 0, g: 0.7607843, b: 1, a: 1}
 --- !u!61 &7778252567459959563
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -211,6 +213,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 5}
   m_EdgeRadius: 0
+--- !u!114 &6146260430674849442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7250696363613272848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e113ce844b47ec86cdb01840194ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blockItem: {fileID: 8365283194484035522}
+  otherRelativePos:
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  - {x: 3, y: 0}
+  - {x: 4, y: 0}
 --- !u!1001 &1409793216432772471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -511,6 +531,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4368253565907518102}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8365283194484035522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5226519485485436244, guid: 48f875bc7670b71489b1c33ece1b3a76,
+    type: 3}
+  m_PrefabInstance: {fileID: 4368253565907518102}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3f80513ea841c7833f98a154223f0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7329318980112724503
 PrefabInstance:
   m_ObjectHideFlags: 0

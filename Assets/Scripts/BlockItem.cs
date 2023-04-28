@@ -9,10 +9,13 @@ namespace DefaultNamespace
 
         private SpriteRenderer _copyItem;
         private SpriteRenderer _spriteRenderer;
-        public void Copy()
+        private Color color;
+        public void Copy(Transform copyContent)
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            _copyItem = Instantiate(gameObject, transform, true).GetComponent<SpriteRenderer>();
+            color = _spriteRenderer.color;
+            _copyItem = Instantiate(gameObject, copyContent, true).GetComponent<SpriteRenderer>();
+            _copyItem.transform.localScale = Vector3.one;
             _copyItem.DOFade(0.5f,0);
             _copyItem.gameObject.SetActive(false);
         }
@@ -42,6 +45,16 @@ namespace DefaultNamespace
         public void HighSort()
         {
             _spriteRenderer.sortingOrder += 100;
+        }
+
+        public void ChangeColor(Color cuteBlockColor)
+        {
+            _spriteRenderer.color = cuteBlockColor;
+        }
+
+        public void ResetColor()
+        {
+            _spriteRenderer.color = color;
         }
     }
 }
